@@ -40,4 +40,12 @@ export class RequestDetailComponent implements OnInit {
     );
   }
 
+  reservenew(): void {
+    this.requestService.reservenewRequest(this.request)
+      .subscribe((newRequest) => {
+        this.request = newRequest
+        this.previousState();
+      }
+    );
+  }
 }

@@ -49,9 +49,15 @@ public class RequestResource {
     @PutMapping("/reserve")
     public void reserve(@RequestBody Request request) {
         log.debug("REST request to reserve a flight");
+
         request.setStatus(RequestStatus.RESERVED);
         requestRepository.save(request);
     }
-
+    @PutMapping("/reservenew")
+    public void reservenew(@RequestBody Request request) {
+        log.debug("REST request to reserve a flight");
+        request.setStatus(RequestStatus.NEW);
+        requestRepository.save(request);
+    }
 
 }

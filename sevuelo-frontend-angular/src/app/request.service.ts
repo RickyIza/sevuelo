@@ -32,6 +32,9 @@ export class RequestService {
     return this.http.put(`${this.url}/reserve`, request, this.httpOptions);
   }
 
+  reservenewRequest(request: Request): Observable<any> {
+    return this.http.put(`${this.url}/reservenew`, request, this.httpOptions);
+  }
   addRequest(request: Request): Observable<Request> {
     return this.http.post<Request>(`${this.url}/requests`, request, this.httpOptions);
   }
